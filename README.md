@@ -212,23 +212,76 @@ while (!queue.isEmpty()) {
 
 ---
 
-## 📊 Time Complexity Quick Reference
-
-| Data Structure | Access | Search | Insert | Delete |
-|---------------|--------|--------|--------|--------|
+### Time Complexity Cheat Sheet
+| Data Structure | Access | Search | Insertion | Deletion |
+|---------------|--------|--------|-----------|----------|
 | Array | O(1) | O(n) | O(n) | O(n) |
-| Hash Table | - | O(1)* | O(1)* | O(1)* |
+| Linked List | O(n) | O(n) | O(1) | O(1) |
+| Stack | O(n) | O(n) | O(1) | O(1) |
+| Queue | O(n) | O(n) | O(1) | O(1) |
+| Hash Table | - | O(1) | O(1) | O(1) |
 | Binary Search Tree | O(log n) | O(log n) | O(log n) | O(log n) |
 | Heap | - | O(n) | O(log n) | O(log n) |
 
-| Algorithm | Best | Average | Worst | Space |
-|-----------|------|---------|-------|-------|
-| Quick Sort | O(n log n) | O(n log n) | O(n²) | O(log n) |
-| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) |
-| Heap Sort | O(n log n) | O(n log n) | O(n log n) | O(1) |
-| Binary Search | O(1) | O(log n) | O(log n) | O(1) |
+---
 
-*Average case for hash table operations
+### Java Collections Framework Quick Reference
+```java
+// ArrayList - Dynamic array
+List<Integer> list = new ArrayList<>();
+list.add(element);           // O(1) amortized
+list.get(index);            // O(1)
+list.remove(index);         // O(n)
+
+// LinkedList - Doubly linked list
+List<Integer> linkedList = new LinkedList<>();
+linkedList.addFirst(element);  // O(1)
+linkedList.addLast(element);   // O(1)
+linkedList.removeFirst();      // O(1)
+
+// HashMap - Hash table
+Map<String, Integer> map = new HashMap<>();
+map.put(key, value);        // O(1) average
+map.get(key);              // O(1) average
+map.containsKey(key);      // O(1) average
+
+// TreeMap - Red-black tree
+Map<String, Integer> treeMap = new TreeMap<>();
+treeMap.put(key, value);    // O(log n)
+treeMap.get(key);          // O(log n)
+
+// PriorityQueue - Min heap by default
+PriorityQueue<Integer> pq = new PriorityQueue<>();
+pq.offer(element);          // O(log n)
+pq.poll();                 // O(log n)
+pq.peek();                 // O(1)
+
+// HashSet - Hash table for unique elements
+Set<Integer> set = new HashSet<>();
+set.add(element);          // O(1) average
+set.contains(element);     // O(1) average
+set.remove(element);       // O(1) average
+
+// TreeSet - Balanced BST for sorted unique elements
+Set<Integer> treeSet = new TreeSet<>();
+treeSet.add(element);      // O(log n)
+treeSet.contains(element); // O(log n)
+```
+---
+
+### Common Problem Patterns & Solutions
+| Pattern | When to Use | Example Problems | Key Insight |
+|---------|-------------|------------------|-------------|
+| Two Pointers | Sorted array, palindromes | Two Sum, 3Sum, Container With Most Water | Use two pointers moving towards each other |
+| Sliding Window | Subarray/substring problems | Max Sum Subarray, Longest Substring | Maintain window with specific property |
+| Fast & Slow Pointers | Cycle detection, middle element | Linked List Cycle, Find Middle | Floyd's algorithm for cycle detection |
+| Merge Intervals | Overlapping intervals | Merge Intervals, Meeting Rooms | Sort by start time, then merge |
+| Cyclic Sort | Array with range 1 to n | Find Missing Number, First Missing Positive | Place each number at its correct index |
+| Tree DFS | Tree traversal, path problems | Binary Tree Paths, Max Depth | Recursive traversal with backtracking |
+| Tree BFS | Level-order, minimum depth | Level Order Traversal, Min Depth | Queue-based level-by-level processing |
+| Trie | Prefix matching, word problems | Word Search II, Auto-complete | Tree structure for string prefixes |
+| Topological Sort | Dependency resolution | Course Schedule, Alien Dictionary | DFS or BFS on directed acyclic graph |
+| Union Find | Connected components | Number of Islands, Graph Valid Tree | Efficient set operations with path compression |
 
 ---
 
@@ -287,26 +340,6 @@ while (!queue.isEmpty()) {
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Here's how to help:
-
-### What We Need
-- **New Solutions**: Well-commented implementations
-- **Better Explanations**: Clearer problem breakdowns
-- **Bug Fixes**: Code improvements and optimizations
-- **Resources**: Additional learning materials
-
-### Contribution Process
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-solution`)
-3. Follow existing code style and add comprehensive comments
-4. Test thoroughly with edge cases
-5. Commit with clear messages
-6. Create Pull Request with detailed description
-
----
-
 ## ⭐ Support This Project
 
 If this repository helps your DSA journey:
@@ -318,21 +351,6 @@ If this repository helps your DSA journey:
 
 ---
 
-## 📞 Connect & Get Help
-
-- **🐛 Issues**: Report bugs or request features
-- **💬 Discussions**: Join community for help and collaboration
-- **📧 Direct Contact**: [your-email@example.com]
-- **🔗 LinkedIn**: [Your LinkedIn Profile]
-- **🐦 Twitter**: [@YourHandle] for updates and tips
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
-
----
 
 **🎯 Remember**: *Consistency beats intensity. Master one concept at a time, practice regularly, and stay persistent. Your future self will thank you!*
 
