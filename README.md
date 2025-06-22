@@ -12,7 +12,7 @@ A comprehensive resource for mastering Data Structures and Algorithms in Java. P
 
 ---
 
-## 🗂️ Repository Structure
+## 🗂️ Repository Structure (The Plan)
 
 ```
 Java-DSA/
