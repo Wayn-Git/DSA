@@ -4,16 +4,18 @@ import java.util.Arrays;
 public class ArraySumPair {
 
     public static void main(String[] args) {
-        int arr[] = {1, 2, 3, 8, 5, 6};
-        int target = 6;
+        int arr[] = {1,2,4,3,9,8,2,3,4,5,2,6,2,8,7,6,5,4,7,9,8,6};
+        int target = 7;
 
         int size = arr.length;
 
+        boolean isSorted = true;
         for (int i = 0; i < size - 1; i++) {
             if (arr[i] > arr[i + 1]) {
                 System.out.println("Array Not Sorted..");
                 System.out.println("Sorting Array...");
-
+                isSorted = false;
+                break;
             }
 
         }
@@ -24,19 +26,23 @@ public class ArraySumPair {
             e.printStackTrace();
         }
 
-        Arrays.sort(arr);
+        if (isSorted == false) {
+            Arrays.sort(arr);
+        }
 
         int left = 0;
         int right = arr.length - 1;
 
         boolean found = false;
 
+        int count = 0; 
+
         while (left < right) {
             int sum = arr[left] + arr[right];
             if (sum == target) {
-                System.out.println("Addition of: " + arr[left] + " " + arr[right] + " " + "Target: " + (arr[left] + arr[right]));
+                count++;
+                System.out.println("Addition of: " + arr[left] + " " + arr[right] + " " + "Target: " + (arr[left] + arr[right]) +" " +  " No Of Pairs: " + count);
                 found = true;
-                break;
             } else if (sum < target) {
                 left++;
             } else {
