@@ -1,4 +1,4 @@
-# Java DSA Mastery 🚀
+# DSA Mastery 🚀
 
 A comprehensive resource for mastering Data Structures and Algorithms in Java. Perfect for interview preparation, competitive programming, and skill development.
 
