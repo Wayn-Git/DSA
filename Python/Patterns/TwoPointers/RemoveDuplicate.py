@@ -19,7 +19,7 @@ k = RemoveDuplicates(List)
 print(List[:k]) # It goes like, start at 0 and end before k which is index 5
 
 
-
+a
 
 
 
